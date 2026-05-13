@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Acreditación Winti</title>
+    <style>
+        body { font-family: 'Arial Black', sans-serif; text-align: center; background-color: #f4f4f4; padding-top: 50px; }
+        .card { background: white; margin: auto; width: 90%; max-width: 400px; padding: 30px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        .grande { font-size: 2.5em; color: #E74C3C; text-transform: uppercase; margin-bottom: 0; line-height: 1.1; }
+        .subtitulo { font-size: 1.5em; color: #333; margin: 10px 0; text-transform: uppercase; }
+        .tipo { font-size: 1.2em; color: #666; letter-spacing: 2px; margin-top: 20px;}
+        .numero { font-size: 4em; color: #2C3E50; margin-top: 5px; line-height: 1;}
+        .nombre { font-size: 1.5em; color: #2980B9; margin-top: 15px; text-transform: uppercase; word-wrap: break-word;}
+    </style>
+</head>
+<body>
+    <div class="card">
+        <p class="grande">ACREDITACIÓN</p>
+        <p class="subtitulo">WINTI HYROX</p>
+        <p class="tipo">PARTICIPANTE</p>
+        <div class="numero" id="numero_participante">#0</div>
+        <div class="nombre" id="nombre_participante">Cargando...</div>
+    </div>
+
+    <script>
+        const parametros = new URLSearchParams(window.location.search);
+        const numero = parametros.get('num') || '0';
+        const nombre = parametros.get('nombre') || 'Participante';
+
+        document.getElementById('numero_participante').innerText = '#' + numero;
+        document.getElementById('nombre_participante').innerText = nombre;
+    </script>
+</body>
+</html>
